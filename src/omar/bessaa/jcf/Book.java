@@ -1,6 +1,6 @@
 package omar.bessaa.jcf;
 
-public class Book {
+public class Book implements Comparable<Book>{
 	private String isbn;
 	private String title;
 	private String author;
@@ -46,6 +46,12 @@ public class Book {
 	@Override
 	public int hashCode() {
 		return this.isbn.hashCode();
+	}
+
+//*************************************** for sort ***********************
+	@Override
+	public int compareTo(Book bk) {
+		return this.isbn.compareTo(bk.getIsbn());
 	}
 	
 	
